@@ -5,6 +5,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Timeclock Backend is Running");
+});
+
 let clockedInUsers = {}; // Stores who is clocked in
 
 app.post("/clock-in", (req, res) => {
